@@ -41,6 +41,7 @@ function un-set-env (){
 # Does some serious copying.
 function deep-cp (){
   find -H $1 -maxdepth 1 -name '.*' -a \( -type d -o -type f -o -type l \) -exec cp -a '{}' $2 \;
+  shopt
   cp -r $1/!(tmp) $2 || true
   # echo copying $1 to $2
 }
